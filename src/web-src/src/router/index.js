@@ -12,10 +12,10 @@ export default new Router({
       path: '/',
       name: 'Index',
       component: Index
-    },{
-      path : "/ws",
-      name:"ChatRoom",
-      component:ChatRoom
+    }, {
+      path: '/ws',
+      name: 'ChatRoom',
+      component: ChatRoom
     }
   ]
 })
