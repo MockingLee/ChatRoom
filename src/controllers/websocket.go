@@ -1,12 +1,10 @@
 package controllers
 
 import (
-
 	"net/http"
-
+	"../model"
 	"github.com/astaxie/beego"
 	"github.com/gorilla/websocket"
-	"../model"
 )
 
 // WebSocketController handles WebSocket requests.
@@ -45,7 +43,7 @@ func (this *WebSocketController) Join() {
 		beego.Error("Cannot setup WebSocket connection:", err)
 		return
 	}
-
+	//ws.WriteJSON()
 	// Join chat room.
 	Join(uname, ws)
 	defer Leave(uname)
@@ -53,6 +51,7 @@ func (this *WebSocketController) Join() {
 	// Message receive loop.
 	for {
 		_, p, err := ws.ReadMessage()
+		beego.Info(uname , " says " , string(p))
 		if err != nil {
 			return
 		}

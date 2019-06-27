@@ -1,10 +1,11 @@
 package controllers
 
 import (
-	"fmt"
-	"github.com/gorilla/websocket"
 	"../model"
+	"github.com/astaxie/beego"
+	"github.com/gorilla/websocket"
 	"time"
+	"fmt"
 )
 
 func newEvent(ep model.EventType, user, msg string) model.Event {
@@ -33,10 +34,20 @@ var (
 func doChat(){
 	for{
 		select {
-		case u := <-online_user:
+		case u := <- online_user:
 			fmt.Println("user in : " , u.Name ,";WebSocket:", u.Conn != nil)
-		//case event := <- publish:
+			beego.Info("user in :", u.Name, ";WebSocket:", u.Conn != nil)
+		case u := <- offline_user:
+			beego.Info("user off : " , u)
+		case e := <- publish:
+			
+			
+
 		}
 	}
+}
+
+func init(){
+	go doChat()
 }
 
