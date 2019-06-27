@@ -30,7 +30,7 @@
 </template>
 
 <script>
-// import api from '../axios'
+import api from '../axios'
 
 export default {
   name: 'Index',
@@ -46,12 +46,28 @@ export default {
     onSubmit () {
       console.log(this.formInline.user)
 
-      this.$router.push({
-        name: 'ChatRoom',
-        params: {
-          'username': this.formInline.user
-        }
+      api.userIn(this.formInline.user).then(({
+        data
+      }) => {
+        console.log(data)
+        data = JSON.parse(data)
+        console.log(data.success)
+        if (data.success === 'true') {
+          this.$router.push({
+            name: 'ChatRoom',
+            params: {
+              'username': this.formInline.user
+            }
+          })
+        } else if (data.success === 'false') alert(data.msg)
       })
+
+      // this.$router.push({
+      //   name: 'ChatRoom',
+      //   params: {
+      //     'username': this.formInline.user
+      //   }
+      // })
 
       // let opt = JSON.stringify({
       //   'username': this.formInline.user

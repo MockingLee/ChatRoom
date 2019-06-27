@@ -1,8 +1,18 @@
 <template>
   <div>chat room
 
+    <div class="container">
+
+      <ul>
+        <li v-for="item in message_array"
+            :key='item'>{{item}}</li>
+      </ul>
+      <input type="text"
+             v-model="message" />
+      <button @click="send">add</button>
+    </div>
     <div>
-      <button @click="send">发消息</button>
+      <button>发消息</button>
     </div>
   </div>
 </template>
@@ -11,7 +21,9 @@
 export default { name: 'ChatRoom',
   data () {
     return {
-      websock: null
+      websock: null,
+      message_array: [],
+      message: ''
     }
   },
   created () {
@@ -21,6 +33,7 @@ export default { name: 'ChatRoom',
     this.websock.close()
   },
   methods: {
+
     initWebSocket () {
       var username = this.$route.params.username
       const wsuri = 'ws://127.0.0.1:9999/api/ws?username=' + username
@@ -32,9 +45,8 @@ export default { name: 'ChatRoom',
       // this.websock.send('hhh')
     },
     send: function () {
-      let data = '123'
-      console.log('send : ', data)
-      this.websock.send(data)
+      console.log('send : ', this.message)
+      this.websock.send(this.message)
     },
     open: function () {
       console.log('socket连接成功')
@@ -44,6 +56,13 @@ export default { name: 'ChatRoom',
     },
     receive: function (e) {
       console.log('receive : ', e)
+      e = JSON.parse(e.data)
+      console.log(e.Type)
+      if (e.Type === 2) { this.message_array.push(e.User + ' says ' + e.Content) }
+      if (e.Type === 1) { this.message_array.push(e.User + ' quit ') }
+      if (e.Type === 0) { this.message_array.push(e.User + ' in ') }
+      console.log(this.message_array)
+      // this.message_array.push('123')
     }
   }
 }

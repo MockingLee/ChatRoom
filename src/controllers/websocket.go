@@ -19,11 +19,21 @@ func (this *WebSocketController) Get() {
 	// Safe check.
 	uname := this.GetString("username")
 	if len(uname) == 0 {
-		this.Data["json"] = "{'success' : 'false' , 'msg' : 'username can not be null'}"
+		this.Data["json"] = "{\"success\" : \"false\" , \"msg\" : \"username can not be null\"}"
 		this.ServeJSON()
 		return
 	}
-	this.Data["json"] = "{'success' : 'true'"
+
+	for u := subscribers.Front() ; u != nil ; u = u.Next() {
+		if uname == u.Value.(Subscriber).Name {
+			this.Data["json"] = "{\"success\" : \"false\" , \"msg\" : \"username exits\"}"
+			this.ServeJSON()
+			return
+		}
+	}
+
+
+	this.Data["json"] = "{\"success\" : \"true\"}"
 	this.ServeJSON()
 
 }
@@ -32,8 +42,17 @@ func (this *WebSocketController) Get() {
 func (this *WebSocketController) Join() {
 	uname := this.GetString("username")
 	if len(uname) == 0 {
-		this.Redirect("/", 302)
+		this.Data["json"] = "{\"success\" : \"false\" , \"msg\" : \"username can not be null\"}"
+		this.ServeJSON()
 		return
+	}
+
+	for u := subscribers.Front() ; u != nil ; u = u.Next() {
+		if uname == u.Value.(Subscriber).Name {
+			this.Data["json"] = "{\"success\" : \"false\" , \"msg\" : \"username exits\"}"
+			this.ServeJSON()
+			return
+		}
 	}
 
 	// Upgrade from http request to WebSocket.
