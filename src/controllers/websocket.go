@@ -1,9 +1,8 @@
 package controllers
 
 import (
-	"ChatRoom/src/model"
+	"../model"
 	"encoding/json"
-	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/gorilla/websocket"
 	"net/http"
