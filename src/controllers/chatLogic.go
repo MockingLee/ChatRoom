@@ -2,10 +2,11 @@ package controllers
 
 import (
 	"../model"
+	"container/list"
+	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/gorilla/websocket"
 	"time"
-	"fmt"
 )
 
 func newEvent(ep model.EventType, user, msg string) model.Event {
@@ -28,7 +29,8 @@ var (
 	online_user = make(chan Subscriber , 10)
 	offline_user = make(chan string , 10)
 	publish = make(chan model.Event, 10)
-
+	subscribers = list.New()
+	waitingList = list.New()
 )
 
 func doChat(){
@@ -39,8 +41,19 @@ func doChat(){
 			beego.Info("user in :", u.Name, ";WebSocket:", u.Conn != nil)
 		case u := <- offline_user:
 			beego.Info("user off : " , u)
-		case e := <- publish:
-			
+		case event := <- publish:
+			// Notify waiting list.
+			for ch := waitingList.Back(); ch != nil; ch = ch.Prev() {
+				ch.Value.(chan bool) <- true
+				waitingList.Remove(ch)
+			}
+
+			broadcastWebSocket(event)
+			model.NewArchive(event)
+
+			if event.Type == model.EVENT_MESSAGE {
+				beego.Info("Message from", event.User, ";Content:", event.Content)
+			}
 			
 
 		}
