@@ -17,7 +17,7 @@ export default { name: 'ChatRoom',
   },
   methods: {
     initWebSocket () {
-      const wsuri = 'ws://127.0.0.1:9999/api/ws?username=test';
+      const wsuri = 'ws://127.0.0.1:9999/api/ws?username=test'
       this.websock = new WebSocket(wsuri)
       this.websock.onmessage = this.websocketonmessage
       this.websock.onopen = this.websocketonopen
