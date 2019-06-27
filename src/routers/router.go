@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"../controllers"
+	"ChatRoom/src/controllers"
 	"github.com/astaxie/beego"
 )
 

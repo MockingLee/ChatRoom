@@ -1,10 +1,12 @@
 package controllers
 
 import (
-	"net/http"
-	"../model"
+	"ChatRoom/src/model"
+	"encoding/json"
+	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/gorilla/websocket"
+	"net/http"
 )
 
 // WebSocketController handles WebSocket requests.
@@ -51,30 +53,33 @@ func (this *WebSocketController) Join() {
 	// Message receive loop.
 	for {
 		_, p, err := ws.ReadMessage()
-		beego.Info(uname , " says " , string(p))
+
 		if err != nil {
 			return
 		}
+		beego.Info(uname , " says " , string(p))
 		publish <- newEvent(model.EVENT_MESSAGE, uname, string(p))
 	}
 }
 
 // broadcastWebSocket broadcasts messages to WebSocket users.
-/*func broadcastWebSocket(event model.Event) {
+func broadcastWebSocket(event model.Event) {
 	data, err := json.Marshal(event)
 	if err != nil {
 		beego.Error("Fail to marshal event:", err)
 		return
 	}
-
+	fmt.Println(subscribers.Len())
 	for sub := subscribers.Front(); sub != nil; sub = sub.Next() {
 		// Immediately send event to WebSocket users.
 		ws := sub.Value.(Subscriber).Conn
+		//fmt.Print(ws)
 		if ws != nil {
+			//beego.Info("send msg to ",sub)
 			if ws.WriteMessage(websocket.TextMessage, data) != nil {
 				// User disconnected.
-				unsubscribe <- sub.Value.(Subscriber).Name
+				unsubscriber <- sub.Value.(Subscriber).Name
 			}
 		}
 	}
-}*/
+}

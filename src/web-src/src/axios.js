@@ -9,7 +9,7 @@ instance.defaults.headers.post['Content-Type'] = 'application/json'
 export default {
   // 获取所有用户
   getTest (data) {
-    return instance.post('api/userLogin', data)
+    return instance.post('api/userin', data)
   }
 
 }

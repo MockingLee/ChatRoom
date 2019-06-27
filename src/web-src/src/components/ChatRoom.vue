@@ -22,12 +22,13 @@ export default { name: 'ChatRoom',
   },
   methods: {
     initWebSocket () {
-      const wsuri = 'ws://127.0.0.1:9999/api/ws?username=test'
+      var username = this.$route.params.username
+      const wsuri = 'ws://127.0.0.1:9999/api/ws?username=' + username
       this.websock = new WebSocket(wsuri)
       this.websock.onopen = this.open
       this.websock.onclose = this.close
       this.websock.onmessage = this.receive
-        .console.log(this.websock)
+      console.log(this.websock)
       // this.websock.send('hhh')
     },
     send: function () {

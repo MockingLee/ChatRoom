@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "./routers"
+	_ "ChatRoom/src/routers"
 	"github.com/astaxie/beego"
 )
 
