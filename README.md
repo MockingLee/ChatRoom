@@ -6,7 +6,7 @@
 
 ## v2 
 - ui upgrade   https://docs.telerik.com/kendo-ui/api/javascript/ui/chat  
-- ![image]()
+- ![image](https://github.com/MockingLee/ChatRoom//raw/master/pic_source/SQJQ1KQ%60%60A8%40TKY36%24W%40LL.png)
 
 ## todo
 - UI 升级 
