@@ -4,6 +4,10 @@
 - 用户名验证 重复 / null
 
 
+## v2 
+- ui upgrade   https://docs.telerik.com/kendo-ui/api/javascript/ui/chat  
+- ![image]()
+
 ## todo
 - UI 升级 
 - 消息记录？ msg 持久化
