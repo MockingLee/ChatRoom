@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import './global'
 axios.default.timeout = 5000
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 

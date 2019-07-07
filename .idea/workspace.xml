@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7632ed70-c177-46ee-82ca-fb8d08ba1030" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/testApi.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/testApi.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/websocket.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/websocket.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/src.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web-src/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/web-src/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web-src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/web-src/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web-src/src/components/ChatRoom.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/web-src/src/components/ChatRoom.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web-src/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/web-src/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web-src/config/dev.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/web-src/config/dev.env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web-src/config/prod.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/web-src/config/prod.env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web-src/src/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/web-src/src/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web-src/src/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/web-src/src/global.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,20 +32,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routers/router.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="9" column="53" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="53" />
+            <state relative-caret-position="275">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/testApi.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+            <state relative-caret-position="425">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -66,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/src/model/archive.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
               <folding>
                 <element signature="e#15#43#0" expanded="true" />
               </folding>
@@ -168,7 +165,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="814" />
     <option name="height" value="867" />
@@ -271,18 +268,17 @@
       <workItem from="1561461518582" duration="1474000" />
       <workItem from="1561548023357" duration="7651000" />
       <workItem from="1562398879700" duration="1482000" />
-      <workItem from="1562465484116" duration="5237000" />
+      <workItem from="1562465484116" duration="7036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15844000" />
+    <option name="totallyTimeSpent" value="17643000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15938166" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15938166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -299,7 +295,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49807197" visible="true" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49807197" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50192803" side_tool="true" weight="0.32974428" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -400,7 +396,7 @@
     <entry file="file://$PROJECT_DIR$/src/model/archive.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
           <folding>
             <element signature="e#15#43#0" expanded="true" />
           </folding>
@@ -414,17 +410,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routers/router.go">
+    <entry file="file://$PROJECT_DIR$/src/controllers/testApi.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="9" column="53" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="53" />
+        <state relative-caret-position="425">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/testApi.go">
+    <entry file="file://$PROJECT_DIR$/src/routers/router.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        <state relative-caret-position="275">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>

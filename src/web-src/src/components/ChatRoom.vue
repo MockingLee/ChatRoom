@@ -50,7 +50,7 @@ export default { name: 'ChatRoom',
     },
     initWebSocket () {
       var username = this.username
-      const wsuri = 'ws:/' + global.GoServerUrl + '/api/ws?username=' + username
+      const wsuri = 'ws://' + global.socketHost + '/api/ws?username=' + username
       this.websock = new WebSocket(wsuri)
       this.websock.onopen = this.open
       this.websock.onclose = this.close
