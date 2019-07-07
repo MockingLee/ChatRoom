@@ -5,12 +5,17 @@
 
 
 ## v2 
+- demo : http://chat.pkmgtdz.top
 - ui upgrade   https://docs.telerik.com/kendo-ui/api/javascript/ui/chat  
-- ![image](https://github.com/MockingLee/ChatRoom//raw/master/pic_source/SQJQ1KQ%60%60A8%40TKY36%24W%40LL.png)
+- ![image](https://github.com/MockingLee/ChatRoom/raw/master/pic_source/v2.png)
+### 待完善
+    - 刷新username -> undefined
+    - websocket 断线重连
+
 
 ## todo
-- UI 升级 
-- 消息记录？ msg 持久化
-- 在线人数 在线列表
-- 媒体msg
-- more awesome features 
+- [x] UI 升级 
+- [ ] 消息记录？ msg 持久化
+- [ ] 在线人数 在线列表
+- [ ] 媒体msg
+- [ ] more awesome features 
