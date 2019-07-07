@@ -16,7 +16,7 @@ Desc string `json:"desc"`
 func (c * ApiController) Get() {
 	mystruct := testStrut{
 		Code:1,
-		Desc:"hh",
+		Desc:"server running successfully",
 	}
 	c.Data["json"] = &mystruct
 	c.ServeJSON()

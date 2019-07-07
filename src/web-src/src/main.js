@@ -7,7 +7,10 @@ import Element from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
+import '@progress/kendo-theme-default/dist/all.css'
+import '@progress/kendo-ui'
+import { Chat, ChatInstaller } from '@progress/kendo-chat-vue-wrapper'
+Vue.use(ChatInstaller)
 Vue.use(VueAxios, axios)
 Vue.use(Element)
 
@@ -17,6 +20,8 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App,
+    Chat},
   template: '<App/>'
 })

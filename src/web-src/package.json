@@ -14,10 +14,14 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@progress/kendo-chat-vue-wrapper": "^2019.2.621",
+    "@progress/kendo-theme-default": "^3.7.0",
+    "@progress/kendo-ui": "^2019.2.703",
     "axios": "^0.19.0",
     "element-ui": "^1.0.9",
     "vue": "^2.5.2",
     "vue-axios": "^2.1.4",
+    "vue-beautiful-chat": "^2.2.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

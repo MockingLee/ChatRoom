@@ -84,6 +84,7 @@ func (this *WebSocketController) Join() {
 // broadcastWebSocket broadcasts messages to WebSocket users.
 func broadcastWebSocket(event model.Event) {
 	data, err := json.Marshal(event)
+	fmt.Print(data)
 	if err != nil {
 		beego.Error("Fail to marshal event:", err)
 		return
