@@ -4,6 +4,7 @@
 - 用户名验证 重复 / null
 
 
+
 ## v2 
 - demo : http://chat.pkmgtdz.top
 - ui upgrade   https://docs.telerik.com/kendo-ui/api/javascript/ui/chat  
